@@ -1,0 +1,142 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+
+<style>
+	.flagContainer {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+	}
+
+	.flag1 {
+		align-content: left;
+	}
+
+	.flag2 {
+		align-content: right;
+	}
+</style>
+
+<html>
+	<head>
+		<title>Coo Coo Club</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+		<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+		#mc_embed_signup{font:14px Helvetica,Arial,sans-serif; width:100%;}
+		/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+		   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+		</style>
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+
+								<!-- Logo -->
+									<h1><a href="{% url 'homepage' %}" id="logo">The Coo Coo Club</a></h1>
+
+								<!-- Nav -->
+									<nav id="nav">
+										<a href="{% url 'homepage' %}">Home</a>
+										<!-- <a href="threecolumn.html">Three Column</a> -->
+										<a href="{% url 'events:main' %}">Events</a>
+<!-- 										<a href="https://goo.gl/maps/u1gVjz9XuRq">Directions</a>
+ -->										<a href="#">About Us</a>
+										<!-- add info about email list -->
+									</nav>
+							</div>
+						</div>
+					</div>
+{% block subcontent %}
+{% endblock subcontent %}
+
+{% block email %}
+{% endblock email %}
+					</div>
+
+				</section>
+
+
+
+{% block content %}
+{% endblock content %}
+
+
+			<!-- Footer -->
+				<section id="footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-8 col-12-medium">
+
+								<!-- Links -->
+									<section>
+										<h2>Links to Important Stuff</h2>
+										<div>
+											<div class="row">
+												<div class="col-3 col-12-small">
+													<ul class="link-list last-child">
+														<li><a href="https://goo.gl/maps/u1gVjz9XuRq">Directions</a></li>
+														<li><a href="#">Rules for The Coo</a></li>
+														<li><a href="#">Accumsan suspendisse</a></li>
+														<li><a href="#">Eu varius vitae magna</a></li>
+													</ul>
+												</div>
+								<!-- End of Links -->
+
+											</div>
+										</div>
+									</section>
+
+							</div>
+							<div class="col-4 col-12-medium imp-medium">
+
+								<!-- Blurb -->
+									<section>
+										<h2>An Informative Text Blurb</h2>
+										<p>
+											Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed. Suspendisse eu
+											varius nibh. Suspendisse vitae magna eget odio amet mollis. Duis neque nisi,
+											dapibus sed mattis quis, sed rutrum accumsan sed. Suspendisse eu varius nibh
+											lorem ipsum amet dolor sit amet lorem ipsum consequat gravida justo mollis.
+										</p>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="flagContainer">
+					<div class="flag1">
+						<img src="{% static 'images/a_flag.jpg' %}">
+					</div>
+
+					<div class="flag2">
+						<img src="{% static 'images/p_flag.jpg' %}">
+					</div>
+				</div>
+
+			<!-- Copyright -->
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
