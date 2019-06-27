@@ -1,0 +1,27 @@
+Where did we leave off? adding something to do 2d bar codes?
+can we add in a function that generates an auto reply from information?
+generate coupon codes?
+2d barcode that moves to a page that automatically inputs information?
+
+For the memorandum page:
+- generate a page very similar to the home page
+- auto upload and convert images to a lower resolution
+- no crop feature, maybe setup to do that onto a phone?
+
+Coupons:
+- Save the numbers somewhere? Maybe check id to see if a code was used?
+- scan the 2d barcode, check with id, ie put in drivers/id number
+- Don't include the letter in the id?
+
+
+Time scripts
+- Celery might work?
+- http://docs.celeryproject.org/en/latest/userguide/calling.html#eta-and-countdown
+
+
+Coupon order
+Should I import the list into my django?
+import the list into django database, execute a firing event for the 2d barcode, put the information into a 
+** send information into django to store
+- generate csv file, or submit data from within django into mailchimp via a web connect function?
+
