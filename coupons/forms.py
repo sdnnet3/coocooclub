@@ -9,3 +9,5 @@ class CouponForm(forms.ModelForm):
 			'firstName',
 			'identification'
 			]
+
+#stuff
