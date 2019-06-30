@@ -5,7 +5,7 @@ from .forms import CouponForm
 def coupon_view(request):
 	form = CouponForm(request.POST or None)
 	if form.is_valid():
-		from.save()
+		form.save()
 	context = {
 		'form' : form
 	}

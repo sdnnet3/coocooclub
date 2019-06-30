@@ -1,7 +1,13 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
-<form>
+<div style="background-color: grey; opacity: 0.8; margin: 80px;">
+
+<h1> Enter Contact Information Below:</h1>
+<form style="margin: 20px;">
 	{{ form.as_p }}
-	<input type="submit" value="Save" />
+	<br />
+	<input type="submit" value="Submit" style="color: black;" />
 </form>
+</div>
+{% endblock content %}
