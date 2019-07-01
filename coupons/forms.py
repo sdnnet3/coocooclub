@@ -6,6 +6,8 @@ class CouponForm(forms.ModelForm):
 	class Meta:
 		model = Coupon
 		fields = [
-			'firstName',
-			'identification'
+			'first',
+			'last',
+			'identification',
+			'email'
 			]

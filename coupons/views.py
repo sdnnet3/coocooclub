@@ -6,6 +6,7 @@ def coupon_view(request):
 	form = CouponForm(request.POST or None)
 	if form.is_valid():
 		form.save()
+		form = CouponForm()
 	context = {
 		'form' : form
 	}

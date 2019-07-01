@@ -1,0 +1,79 @@
+[Unit]
+Description=coo-gunicorn socket
+
+[Socket]
+ListenStream=/run/coo-gunicorn.sock
+
+[Install]
+WantedBy=sockets.target
+
+
+
+
+
+
+
+[Unit]
+Description=coo-gunicorn daemon
+Requires=coo-gunicorn.socket
+After=network.target
+
+[Service]
+User=clayton
+Group=www-data
+WorkingDirectory=/home/clayton/coocoo
+ExecStart=/home/clayton/coocoo/cooEnv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/coo-gunicorn.sock \
+          coocoo.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+
+
+
+
+
+
+server {
+    server_name www.scienceprobs.com scienceprobs.com;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/clayton/scienceprobs;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/sci-gunicorn.sock;
+    }
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/www.perspectiveperfection.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/www.perspectiveperfection.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
+
+
+server {
+    listen 80;
+    server_name funibility.com www.funibility.com;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/clayton/coocoo;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/coo-gunicorn.sock;
+    }
+}

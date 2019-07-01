@@ -1,10 +1,19 @@
 {% extends 'base_layout.html' %}
 
 {% block content %}
-<div style="background-color: grey; opacity: 0.8; margin: 80px;">
 
-<h1> Enter Contact Information Below:</h1>
-<form style="margin: 20px;">
+<style type="text/css">
+	input {
+  background-color: white;
+  color: black;
+}
+</style>
+<div style="background-color: grey; opacity: 0.8; margin: 10px;">
+
+<h1 style="padding: 10px;"> Enter Contact Information Below:</h1>
+<h2 style="padding: 10px;"> Enter name, and Identification/Drivers Licence number without the leading letter.</h2>
+<form method='POST' style="margin: 20px;" >
+	{% csrf_token %}
 	{{ form.as_p }}
 	<br />
 	<input type="submit" value="Submit" style="color: black;" />
