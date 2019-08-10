@@ -1,0 +1,46 @@
+{% extends 'base_layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<style type="text/css">
+
+img {
+  border:solid 5px;
+  border-bottom-color:#ffe;
+  border-left-color:#eed;
+  border-right-color:#eed;
+  border-top-color:#ccb;
+  max-height:100%;
+  max-width:100%;
+}
+
+
+</style>
+			<!-- Features -->
+				<section id="features">
+					<div class="container">
+						<div class="row">
+
+
+		{% for people in people %}
+							<div class="col-3 col-6-medium col-12-small">
+
+								<!-- Feature #1 -->
+
+									<section>
+										<a href=# class="bordered-feature-image">
+												<img src="{% static 'media/' %}{{people.photo}}" alt="{{lastName}}, {{firstName}}" />
+										</a>
+										<h2 style="text-align: center;">{{people.lastName}}, {{people.firstName}}</h2>
+										<h2>
+											Born: {{people.born}}<br />
+											Passed: {{people.passed}}
+										</h2>
+									</section>
+							</div>
+		{% endfor %}
+						</div>
+					</div>
+				</section>
+{% endblock content %}

@@ -8,15 +8,23 @@
   color: black;
 }
 </style>
-<div style="background-color: grey; opacity: 0.8; margin: 10px;">
+<div style="background-color: purple; opacity: 0.7; margin: 10px;">
+<br />
+<p style="padding: 10px; font-size: 25px;">
+  In exchange signing up for our events mailing list, you will be given a virtual coupon for a $1 drink of your choice (For drinks normally priced up to $7.00).<br />
+  Premium drinks are excluded.<br /> 
+  Enter Your Contact Information Below:<br />
+  Enter name, and Identification/Drivers Licence number without the leading letter.<br />
+  Your ID will be verified at the bar in order to be redeemed, you'll need it anyway.<br />
+  Your personal information will not be sold, traded, and will only be used for the  
 
-<h1 style="padding: 10px;"> Enter Contact Information Below:</h1>
-<h2 style="padding: 10px;"> Enter name, and Identification/Drivers Licence number without the leading letter.</h2>
+</p>
 <form method='POST' style="margin: 20px;" >
 	{% csrf_token %}
 	{{ form.as_p }}
 	<br />
 	<input type="submit" value="Submit" style="color: black;" />
 </form>
+<br />
 </div>
 {% endblock content %}
