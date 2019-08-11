@@ -21,6 +21,7 @@ class information(models.Model):
 	Title = models.CharField(max_length = 150)
 	Text = models.TextField(max_length = 300)
 	Photo = models.ImageField(default = 'default.jpg', blank = True)
+	slug = models.SlugField(blank = True)
 
 	def __str__(self):
 		return self.Title
