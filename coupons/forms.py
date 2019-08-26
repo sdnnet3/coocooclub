@@ -11,3 +11,11 @@ class CouponForm(forms.ModelForm):
 			'identification',
 			'email'
 			]
+
+class CouponApplyForm(forms.ModelForm):
+	class Meta:
+		model = Coupon
+		fields = [
+		'identification',
+		'active'
+		]

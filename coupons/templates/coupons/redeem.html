@@ -1,0 +1,25 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<style type="text/css">
+	input {
+  background-color: white;
+  color: black;
+}
+</style>
+<div style="background-color: purple; opacity: 0.7; margin: 10px;">
+<br />
+<p style="padding: 10px; font-size: 25px;">
+  Enter id<br />
+{{object.active}}
+</p>
+<form method='POST' style="margin: 20px;" >
+	{% csrf_token %}
+	{{ form.as_p }}
+	<br />
+	<input type="submit" value="Submit" style="color: black;" />
+</form>
+<br />
+</div>
+{% endblock content %}
