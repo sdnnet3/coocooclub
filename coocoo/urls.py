@@ -25,4 +25,5 @@ urlpatterns = [
     path('', index, name = 'homepage'),
     path('events/', include('events.urls')),
     path('coupons/', include('coupons.urls')),
+    path('inmemory/', include('inmemory.urls')),
 ]

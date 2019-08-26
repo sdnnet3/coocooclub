@@ -50,7 +50,6 @@
 								<!-- Nav -->
 									<nav id="nav">
 										<a href="{% url 'homepage' %}">Home</a>
-										<!-- <a href="threecolumn.html">Three Column</a> -->
 										<a href="{% url 'events:main' %}">Events</a>
 <!-- 										<a href="https://goo.gl/maps/u1gVjz9XuRq">Directions</a>
  -->										<a href="#">About Us</a>
@@ -69,6 +68,14 @@
 
 				</section>
 
+
+{% if messages %}
+{% for message in messages %}
+	<div class="alert alert-{{ message.tags }}">
+		{{ message }}
+	</div>
+{% endfor %}
+{% endif %}
 
 
 {% block content %}
@@ -105,13 +112,13 @@
 
 								<!-- Blurb -->
 									<section>
-										<h2 style="color: #fff; text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;"><a name="contact">Contact Us</a></h2>
-										<p style="color: black; background: lightgrey; opacity: 0.8;">
+										<h2 style="color: #fff; text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000; font-size: 26px;"><a name="contact">Contact Us</a></h2>
+										<p style="color: #fff; text-shadow: 2px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000; font-size: 23px;">
 										Call/Text: (619) 561-1158<br />
 										Address:<br />
 										8203 Winter Gardens Blvd.<br />
 										Lakeside, Ca 92040<br />
-										<a style="color: black;" href="mailto:coocooclubresumes@gmail.com?subject=Webpage%20Contact">Email Us</a><br />
+										<a style="color: white;" href="mailto:coocooclubresumes@gmail.com?subject=Webpage%20Contact">Email Us</a><br />
 										</p>
 									</section>
 
